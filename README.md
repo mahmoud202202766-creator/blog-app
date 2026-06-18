@@ -1,16 +1,64 @@
-# React + Vite
+# React Blog App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A blog application built with **React** and **Axios**, demonstrating full CRUD (Create, Read, Update, Delete) operations connected to a live REST API. No localStorage is used — all data is persisted remotely via [MockAPI](https://mockapi.io), so posts remain available across sessions and for every visitor.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Create** new blog posts with a title and body
+- **Read** all posts on the homepage, with individual post pages
+- **Update** existing posts via an edit form
+- **Delete** posts
+- **Search** posts by title
+- Loading and error states while fetching data
+- Client-side routing between Home, Post, Edit, and About pages
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** (Vite)
+- **Axios** — HTTP client for API requests
+- **easy-peasy** — global state management (store, actions, thunks, computed values)
+- **React Router** — client-side routing
+- **MockAPI.io** — live REST API used as the backend/data store
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Instead of using `localStorage` (which only persists data on a single browser), this app talks to a real REST API. All CRUD operations go through Axios:
+
+```js
+// Get all posts
+api.get("/posts")
+
+// Create a post
+api.post("/posts", newPost)
+
+// Update a post
+api.put(`/posts/${id}`, updatedPost)
+
+// Delete a post
+api.delete(`/posts/${id}`)
+```
+
+The app's global state (posts list, search results, form inputs) is managed with **easy-peasy**, keeping components clean and centralizing async logic in thunks.
+
+## Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/mahmoud202202766-creator/blog-app.git
+
+# Install dependencies
+cd blog-app
+npm install
+
+# Run the dev server
+npm run dev
+```
+
+## Live Demo
+
+[Add your Vercel/Netlify link here]
+
+## Author
+
+**Mahmoud Elhayad** — Front-End Developer (React.js & JavaScript)
+[GitHub](https://github.com/mahmoud202202766-creator)
