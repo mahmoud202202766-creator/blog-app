@@ -56,8 +56,7 @@ npm run dev
 
 ## Live Demo
 
-[Add your Vercel/Netlify link here]
-
+(https://blog-app-two-dusky.vercel.app/)
 ## Author
 
 **Mahmoud Elhayad** — Front-End Developer (React.js & JavaScript)
